@@ -1,4 +1,4 @@
-name: Generate Index JSON
+name: Generate Index JSON FILE
 
 on:
   push:
