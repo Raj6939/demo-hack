@@ -3,7 +3,7 @@ name: Merge if project.json exists
 on:
   push:
     branches:
-      - master
+      - main
     branches:
       - ${{ github.event.new_branch }}
 
@@ -22,4 +22,4 @@ jobs:
           fi
       - name: Merge code
         run: |
-          git merge master
+          git merge main
