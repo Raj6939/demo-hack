@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Generate Index JSON
-        run: node .github/actions/generate-index-json.js
+        run: node generate-index-json.js
