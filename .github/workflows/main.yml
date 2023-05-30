@@ -3,8 +3,7 @@ name: Generate Index JSON FILE
 on:
   push:
     branches:
-      - main
-
+      - test-generate-index
 jobs:
   generate-index-json:
     runs-on: ubuntu-latest
