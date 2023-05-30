@@ -46,11 +46,16 @@ export default {
     readJSONFiles() {
       const jsonFiles = require.context('../allProjects', false, /\.json$/);
 
-      jsonFiles.keys().forEach((fileName) => {
-        const jsonData = jsonFiles(fileName);
-        this.jsonData.push(jsonData);
-      });
+       jsonFiles.keys().forEach((fileName) => {
+    if (fileName.endsWith('.json')) {
+      const jsonData = jsonFiles(fileName);
+      this.jsonData.push(jsonData);
     }
+  });
+
+  if (this.jsonData.length === 0) {
+    throw new Error('No JSON files found.');
+  }}
   }
 };
 </script>
