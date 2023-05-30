@@ -3,7 +3,7 @@ name: Generate Index JSON
 on:
   push:
     branches:
-      - test-generate-index
+      - main
 
 jobs:
   generate-index-json:
@@ -11,7 +11,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.4.3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: '16'
 
       - name: Run Generate Index JSON
-        run: node generate-index-json.js
+        run: |
+          node generate-index-json.js
