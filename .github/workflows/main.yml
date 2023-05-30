@@ -3,7 +3,7 @@ name: Generate Index JSON
 on:
   push:
     branches:
-      - main
+      - test-generate-index
 
 jobs:
   generate-index-json:
