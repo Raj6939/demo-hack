@@ -13,9 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
       - name: Set directory permissions
         run: chmod -R 700 methods
-        
+
       - name: Debug output
         run: |
           echo "Current working directory: $PWD"
