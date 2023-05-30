@@ -1,41 +1,70 @@
 <template>
-  <div id="app">
-    <HelloWorld v-for="(card, index) in cards" :key="index" :card="card"/>
-    
+  <div id="app" class="text-center">    
+      <b-card
+        v-for="(data, index) in jsonData"
+        :key="index"
+        :title="data.property"
+        img-src="https://picsum.photos/600/300/?image=25"
+        img-alt="Image"
+        img-top
+        tag="article"
+        style="max-width: 20rem; padding:10px;"
+        class="mb-2"
+      >
+        <b-card-text>
+          {{ data.description }}
+        </b-card-text>
+        <b-button :href="data.projectLink" target="_blank" variant="primary">View</b-button>
+        <footer>
+          <small>
+            <b-badge
+              v-for="(tag, index) in data.tags"
+              :key="index"
+              :data="data"
+              pill
+              variant="secondary"
+              style="margin-left: 2px"
+            >{{ tag }}</b-badge>
+          </small>
+        </footer>
+      </b-card>    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import project from "../projects.json"
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
   data() {
     return {
-      cards:project
-      // cards: [
-      //   { id: 1, title: 'Card 1', description: 'Description for Card 1' },
-      //   { id: 2, title: 'Card 2', description: 'Description for Card 2' },
-      //   { id: 3, title: 'Card 3', description: 'Description for Card 3' },
-      //   { id: 4, title: 'Card 3', description: 'Description for Card 3' },
-      //   { id: 5, title: 'Card 3', description: 'Description for Card 3' },
-      //   { id: 6, title: 'Card 3', description: 'Description for Card 3' }
-      // ]
+      jsonData: []
+    };
+  },
+  created() {
+    this.readJSONFiles();
+  },
+  methods: {
+    readJSONFiles() {
+      const jsonFiles = require.context('../allProjects', false, /\.json$/);
+
+      jsonFiles.keys().forEach((fileName) => {
+        const jsonData = jsonFiles(fileName);
+        this.jsonData.push(jsonData);
+      });
     }
-    }
-}
+  }
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
+.text-center {
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+}
+
 </style>
