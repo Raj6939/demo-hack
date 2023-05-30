@@ -1,25 +1,24 @@
-name: Merge if project.json exists
+name: Merge project.json if it exists and deploy on main
 
 on:
   push:
-    branches:
+    branches-ignore:
       - main
-    branches:
-      - ${{ github.event.new_branch }}
+    paths:
+      - 'project.json'
 
 jobs:
-  merge:
+  merge-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Check if project.json exists
+      - name: Merge project.json into main
         run: |
-          if [ -f project.json ]; then
-            echo "project.json exists"
-          else
-            echo "project.json does not exist"
-            exit 1
-          fi
-      - name: Merge code
+          git checkout main
+          git merge "${{ github.ref }}"
+          git push origin main
+      - name: Deploy on main
+        if: success()
         run: |
-          git merge main
+          npm run build
+          echo "Deployment on main branch"
