@@ -1,22 +1,22 @@
-name: Generate Index JSON FILE
+name: Generate Index JSON
 
 on:
   push:
     branches:
       - test-generate-index
+
 jobs:
   generate-index-json:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2.4.3
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2.4.1
+        uses: actions/setup-node@v2
         with:
           node-version: '16'
 
       - name: Run Generate Index JSON
-        run: |
-          node generate-index-json.js
+        run: node generate-index-json.js
