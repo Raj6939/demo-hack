@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // set directories and paths
-const methodsDir = path.join(__dirname, './methods');
+const methodsDir = path.join(process.cwd(), 'methods');
 const indexFile = path.join(methodsDir, 'index.json');
 
 // Process all method files and generate an index file
