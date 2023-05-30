@@ -1,0 +1,25 @@
+name: Merge if project.json exists
+
+on:
+  push:
+    branches:
+      - master
+    branches:
+      - ${{ github.event.new_branch }}
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check if project.json exists
+        run: |
+          if [ -f project.json ]; then
+            echo "project.json exists"
+          else
+            echo "project.json does not exist"
+            exit 1
+          fi
+      - name: Merge code
+        run: |
+          git merge master
