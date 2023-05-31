@@ -41,6 +41,15 @@
     ]
   },
   {
+    "name": "Pratap Mridha",
+    "description": "Pratap Mridha Github",
+    "projectLink": "https://github.com/pratap2018",
+    "tags": [
+      "pratap",
+      "github"
+    ]
+  },
+  {
     "name": "ZK-DID KYC",
     "description": "KYC using zero knowledge proof on chain",
     "projectLink": "https://hypersign.id",
