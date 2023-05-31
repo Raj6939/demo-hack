@@ -2,14 +2,14 @@ const fs = require('fs');
 const path = require('path');
 
 // set directories and paths
-// let currentDirectory = process.cwd();
-// const lastIndex = currentDirectory.lastIndexOf('demo-hack');
-// console.log(lastIndex)
-// const splicedPath = currentDirectory.slice(0, lastIndex);
+let currentDirectory = process.cwd();
+const lastIndex = currentDirectory.lastIndexOf('sdemo-hack');
+console.log(lastIndex)
+const splicedPath = currentDirectory.slice(0, lastIndex);
 
-// console.log(splicedPath);
-//   console.log('Current directory:', splicedPath);
-const methodsDir = path.join(__dirname, './methods');
+console.log(splicedPath);
+  console.log('Current directory:', splicedPath);
+const methodsDir = path.join(splicedPath, 'methods');
 const indexFile = path.join(methodsDir, 'index.json');
 
 // Process all method files and generate an index file
