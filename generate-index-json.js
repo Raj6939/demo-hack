@@ -3,7 +3,7 @@ const path = require('path');
 
 // set directories and paths
 let currentDirectory = process.cwd();
-const lastIndex = currentDirectory.lastIndexOf('sdemo-hack');
+const lastIndex = currentDirectory.lastIndexOf('demo-hack');
 console.log(lastIndex)
 const splicedPath = currentDirectory.slice(0, lastIndex);
 
