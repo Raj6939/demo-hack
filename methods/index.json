@@ -11,6 +11,16 @@
     ]
   },
   {
+    "name": "Game Name DID",
+    "description": "DID as a Game Identity",
+    "projectLink": "https://hypersign.id",
+    "tags": [
+      "GAME-DID",
+      "DID",
+      "HID"
+    ]
+  },
+  {
     "name": "ZK-DID KYC",
     "description": "KYC using zero knowledge proof on chain",
     "projectLink": "https://hypersign.id",
