@@ -27,5 +27,19 @@ jobs:
           ls -al
           ls -al methods
 
+      - name: Create file
+        run: |
+          const fs = require('fs');
+          const path = require('path');
+
+          const directoryPath = '../methods'; // Specify the target directory within the repository
+          const filePath = path.join(directoryPath, 'file.txt'); // Specify the file path within the directory
+
+          const fileContent = 'This is the content of the file';
+
+          fs.writeFileSync(filePath, fileContent);
+
+          console.log('File created:', filePath)
+
       - name: Run Generate Index JSON
         run: node generate-index-json.js
