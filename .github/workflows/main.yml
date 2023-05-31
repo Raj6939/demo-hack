@@ -32,8 +32,8 @@ jobs:
           const fs = require('fs');
           const path = require('path');
 
-          const directoryPath = '../methods'; // Specify the target directory within the repository
-          const filePath = path.join(directoryPath, 'file.txt'); // Specify the file path within the directory
+          const directoryPath = '../methods';
+          const filePath = path.join(directoryPath, 'file.txt');
 
           const fileContent = 'This is the content of the file';
 
