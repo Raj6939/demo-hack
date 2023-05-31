@@ -1,5 +1,6 @@
 <template>
-  <div id="app" class="text-center">    
+  <div id="app" class="text-center">  
+    <p>Projects built using Hypersign</p>  
       <b-card
         v-for="(data, index) in jsonData"
         :key="index"
