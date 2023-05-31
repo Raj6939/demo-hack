@@ -1,0 +1,6 @@
+{
+    "name": "ZK-DID KYC",
+    "description": "KYC using zero knowledge proof on chain",
+    "projectLink": "https://hypersign.id",
+    "tags":["KYC","ZKP","DID","HID"]
+}
