@@ -31,6 +31,7 @@ const indexFile = path.join(methodsDir, 'index.json');
 
   if(allMethods.length > 0) {
     fs.writeFileSync(indexFile, JSON.stringify(allMethods, null, 2), 'utf-8');
+    console.log("allMethods",allMethods)
     console.log('\n\nGenerated /methods/index.json.');
     const currentDirectory = process.cwd();
   console.log('Current directory:', currentDirectory);
