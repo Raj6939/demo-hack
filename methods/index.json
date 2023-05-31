@@ -1,0 +1,12 @@
+[
+  {
+    "property": "DAO",
+    "description": "DAO using DID and ZKP Voting",
+    "projectLink": "https://hypersign.id",
+    "tags": [
+      "DAO",
+      "ZKP",
+      "DID"
+    ]
+  }
+]

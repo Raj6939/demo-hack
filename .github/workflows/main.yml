@@ -1,0 +1,49 @@
+name: Generate Index JSON
+
+on:
+  push:
+    branches:
+      - test-generate-index
+
+jobs:
+  generate-index-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Set directory permissions
+        run: chmod -R 700 methods
+
+      - name: Debug output
+        run: |
+          echo "Current working directory: $PWD"
+          ls -al
+          ls -al methods
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "Raj6939"
+          git config --global user.email "raj.v.patil108@gmail.com"
+
+      - name: Run Generate Index JSON
+        run: node generate-index-json.js
+
+      - name: Stage index file
+        run: git add methods/index.json
+
+      - name: Commit changes
+        run: git commit -m "Add index file"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+

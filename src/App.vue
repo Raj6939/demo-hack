@@ -32,19 +32,25 @@
 </template>
 
 <script>
+import indexFile from "../methods/index.json"
 export default {
   name: 'App',
   data() {
     return {
-      jsonData: []
+      jsonData:[]
     };
   },
   created() {
-    this.readJSONFiles();
+    if (Object.keys(indexFile).length === 0) {
+  console.log('JSON data is empty');
+} else {
+  console.log('JSON data is not empty');
+  this.jsonData = indexFile
+}    
   },
   methods: {
     readJSONFiles() {
-      const jsonFiles = require.context('../allProjects', false, /\.json$/);
+      const jsonFiles = require.context('../methods', false, /\.json$/);
 
        jsonFiles.keys().forEach((fileName) => {
     if (fileName.endsWith('.json')) {
