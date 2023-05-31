@@ -27,16 +27,16 @@ jobs:
           ls -al
           ls -al methods
 
-      - name: Create file
-        run: |
-          node -e "const fs = require('fs');
-          const path = require('path');
+      - name: Run Generate Index JSON
+        run: node generate-index-json.js
 
-          const directoryPath = './methods';
-          const filePath = path.join(directoryPath, 'file.txt');
+      - name: Stage index file
+        run: git add methods/index.json
 
-          const fileContent = 'This is the content of the file';
+      - name: Commit changes
+        run: git commit -m "Add index file"
 
-          fs.writeFileSync(filePath, fileContent);
-
-          console.log('File created:', filePath);"
+      - name: Push changes
+        uses: ad-m/github-push-action@test-generate-index
+        with:
+          github_token: ${{ secrets.MY_SECRET }}
