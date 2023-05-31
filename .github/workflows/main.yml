@@ -39,4 +39,4 @@ jobs:
 
           fs.writeFileSync(filePath, fileContent);
 
-          console.log('File created:', filePath)
+          console.log('File created:', filePath);
