@@ -3,7 +3,7 @@
       <b-card
         v-for="(data, index) in jsonData"
         :key="index"
-        :title="data.property"
+        :title="data.name"
         img-src="https://picsum.photos/600/300/?image=25"
         img-alt="Image"
         img-top
