@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     readJSONFiles() {
-      const jsonFiles = require.context('../allProjects', false, /\.json$/);
+      const jsonFiles = require.context('../methods', false, /\.json$/);
 
        jsonFiles.keys().forEach((fileName) => {
     if (fileName.endsWith('.json')) {
