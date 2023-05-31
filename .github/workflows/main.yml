@@ -32,7 +32,7 @@ jobs:
           node -e "const fs = require('fs');
           const path = require('path');
 
-          const directoryPath = '../methods';
+          const directoryPath = './methods';
           const filePath = path.join(directoryPath, 'file.txt');
 
           const fileContent = 'This is the content of the file';
