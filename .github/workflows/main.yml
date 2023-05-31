@@ -37,6 +37,6 @@ jobs:
         run: git commit -m "Add index file"
 
       - name: Push changes
-        uses: ad-m/github-push-action@test-generate-index
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.MY_SECRET }}
