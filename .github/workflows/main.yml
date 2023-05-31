@@ -48,7 +48,7 @@ jobs:
           branch: ${{ github.ref }}
 
       - name: Build
-        run: npm run build
+        run: npm install && npm run build
 
       - name: Deploy
         run: npm run deploy
