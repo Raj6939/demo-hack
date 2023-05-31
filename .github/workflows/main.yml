@@ -27,6 +27,11 @@ jobs:
           ls -al
           ls -al methods
 
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "Raj6939"
+          git config --global user.email "raj.v.patil108@gmail.com"
+
       - name: Run Generate Index JSON
         run: node generate-index-json.js
 
