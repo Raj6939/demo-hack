@@ -32,15 +32,21 @@
 </template>
 
 <script>
+import indexFile from "../methods/index.json"
 export default {
   name: 'App',
   data() {
     return {
-      jsonData: []
+      jsonData:[]
     };
   },
   created() {
-    this.readJSONFiles();
+    if (Object.keys(indexFile).length === 0) {
+  console.log('JSON data is empty');
+} else {
+  console.log('JSON data is not empty');
+  this.jsonData = indexFile
+}    
   },
   methods: {
     readJSONFiles() {
