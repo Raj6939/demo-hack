@@ -29,7 +29,7 @@ jobs:
 
       - name: Create file
         run: |
-          const fs = require('fs');
+          node -e "const fs = require('fs');
           const path = require('path');
 
           const directoryPath = '../methods';
@@ -39,4 +39,4 @@ jobs:
 
           fs.writeFileSync(filePath, fileContent);
 
-          console.log('File created:', filePath);
+          console.log('File created:', filePath);"
