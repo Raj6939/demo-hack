@@ -31,6 +31,16 @@
     ]
   },
   {
+    "name": "DODO",
+    "description": "Web3 Portfolio using DID, creating crosschain reputation (Pratap)",
+    "projectLink": "https://dodo.hypersign.id/",
+    "tags": [
+      "pratap",
+      "DID",
+      "HID"
+    ]
+  },
+  {
     "name": "ZK-DID KYC",
     "description": "KYC using zero knowledge proof on chain",
     "projectLink": "https://hypersign.id",
