@@ -32,9 +32,13 @@ const indexFile = path.join(methodsDir, 'index.json');
   if(allMethods.length > 0) {
     fs.writeFileSync(indexFile, JSON.stringify(allMethods, null, 2), 'utf-8');
     console.log("allMethods",allMethods)
-    console.log('\n\nGenerated /methods/index.json.');
+    // console.log('\n\nGenerated /methods/index.json.');
     const currentDirectory = process.cwd();
   console.log('Current directory:', currentDirectory);
+  const indexData = fs.readFileSync(indexFile, 'utf-8');
+  console.log('Index File Path',indexFile)
+  const indexJson = JSON.parse(indexData);
+  console.log('Index File Contents:', indexJson);
   } else {
     console.error('\n\n❌ ERROR: No methods found in methods directory');
     process.exit(1);
